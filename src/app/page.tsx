@@ -1,20 +1,23 @@
-import Header from "./components/header"
-import { getGamesByDate } from "@/app/data/repository/games"
-import { Game } from "@/app/domain/interfaces/game"
+import Header from "./components/header";
+import Game from "./components/game";
+import { getGamesByDate } from "@/app/data/repository/games";
+import { Api } from "@/app/domain/interfaces/api";
 
 const Home = async () => {
-  
-  const games: Game[] = await getGamesByDate('2024-02-28')
-  console.log(games)
+  const { results, response, errors }:
+    Api = await getGamesByDate('2024-02-29')
 
   return (
     <>
-      <Header title="Games for today" />
-      {games?.length > 0 && games.map(game => (
-        <div key={game?.id}>{game?.id}</div>
-      )) }
+      <Header title="Games for today" /> <span>{results}</span>
+      <section className="">
+        {response?.length > 0 &&
+          response.map(data => (
+            <Game key={data?.id} game={data} />
+          ))}
+      </section >
     </>
   )
 }
 
-export default Home
+export default Home;
