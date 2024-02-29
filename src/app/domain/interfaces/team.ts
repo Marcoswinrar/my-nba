@@ -1,3 +1,7 @@
 export interface Team {
-  name: string
+  id: number;
+  name: string;
+  nickname: string;
+  code: string;
+  logo: string;
 }
