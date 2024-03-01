@@ -1,4 +1,4 @@
-import Header from "@/app/components/header"
+import Header from "@/app/components/Header";
 
 const Standings = () => {
   return (
@@ -6,4 +6,4 @@ const Standings = () => {
   )
 }
 
-export default Standings
+export default Standings;

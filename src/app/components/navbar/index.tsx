@@ -1,9 +1,22 @@
 import Image from "next/image"
 import Link from "next/link"
 
+const linkStyle = `
+  hover:text-sky-400
+`;
+const navBarStyle = `
+  mx-auto 
+  p-3 
+  lg:p-[5rem] 
+  flex
+  justify-between 
+  items-center
+  w-full
+`;
+
 const Navbar = () => {
   return (
-    <header className="mx-auto p-3 lg:p-[5rem] flex justify-between items-center">
+    <header className={navBarStyle}>
       <Link href={"/"}>
         <Image
           alt="NBA Logo"
@@ -21,8 +34,4 @@ const Navbar = () => {
   )
 }
 
-const linkStyle = `
-  hover:text-sky-400
-`
-
-export default Navbar
+export default Navbar;

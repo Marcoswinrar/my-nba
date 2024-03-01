@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import "./globals.css";
+import Layout from "./components/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 const mainStyle = `
@@ -9,7 +11,8 @@ const mainStyle = `
   max-lg:text-center 
   max-lg:mt-[1rem] 
   mx-[5rem]
-`
+  flex-grow
+`;
 
 export const metadata: Metadata = {
   title: "My nba",
@@ -23,11 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        <main className={mainStyle}>
-          {children}
-        </main>
+      <body className={`${inter.className} bg-gradient-to-r from-slate-900 to-slate-700`}>
+        <Layout >
+          <Navbar />
+          <main className={mainStyle}>
+            {children}
+          </main>
+          <Footer />
+        </Layout>
       </body>
     </html>
   );

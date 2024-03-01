@@ -5,8 +5,8 @@ interface Props {
 
 const Header = ({title}: Props) => {
   return (    
-    <h1 className="text-2xl">{title} →</h1>
+    <h1 className="text-2xl pb-5">{title} →</h1>
   )
 }
 
-export default Header
+export default Header;
