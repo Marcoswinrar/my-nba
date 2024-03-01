@@ -1,4 +1,5 @@
 import { Team } from "./team";
+import { Score } from "./score";
 export interface Game {
   id: number;
   league: string;
@@ -48,10 +49,3 @@ interface Scores {
   home: Score;
 }
 
-interface Score {
-  win: number;
-  loss: number;
-  series: Object;
-  linescore: Array<string>;
-  points: number;
-}
