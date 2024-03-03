@@ -7,7 +7,7 @@ const linkStyle = `
 const navBarStyle = `
   mx-auto 
   p-3 
-  lg:p-[5rem] 
+  lg:p-[3rem] 
   flex
   justify-between 
   items-center
