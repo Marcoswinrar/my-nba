@@ -1,3 +1,4 @@
+import { Conference } from "./conference";
 import { Team } from "./team";
 
 export interface Standings {
@@ -14,12 +15,6 @@ export interface Standings {
   tieBreakerPoints: any;
 };
 
-interface Conference {
-  name: string;
-  rank: number;
-  win: number;
-  loss: number;
-};
 
 interface Division {
   name: string;
