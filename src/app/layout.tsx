@@ -10,7 +10,7 @@ const mainStyle = `
   max-lg:mx-[2rem] 
   max-lg:text-center 
   max-lg:mt-[1rem] 
-  mx-[5rem]
+  mx-[3rem]
   flex-grow
 `;
 
