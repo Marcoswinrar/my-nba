@@ -30,4 +30,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .active {
+    border-bottom: 1px solid #38BDF8;
+  }
 }
