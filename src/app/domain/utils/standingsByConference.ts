@@ -1,9 +1,5 @@
+import { Conferences } from "../interfaces/conferences";
 import { Standings } from "../interfaces/standings";
-
-type Conferences = {
-  east: Standings[];
-  west: Standings[];
-}
 
 export const formatStandingsByConference = (standings: Standings[]) => {
   const conferences: Conferences = {
