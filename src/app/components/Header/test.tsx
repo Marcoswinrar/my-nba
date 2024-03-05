@@ -1,11 +1,11 @@
-import { render } from "@testing-library/react"
-import Header from ".";
+import { render, screen } from "@testing-library/react"
+import Header from '@/app/components/Header'
 
 describe("<Header /> component tests", () => {
 
   it("Should render component without problems", () => {
-    const { getByText } = render(<Header title="My Header Title"/>);
-    expect(getByText("My Header Title →")).toBeInTheDocument();
+    render(<Header title="My Header Title"/>);
+    expect(screen.getByText("My Header Title →")).toBeInTheDocument();
 
   }); 
 });

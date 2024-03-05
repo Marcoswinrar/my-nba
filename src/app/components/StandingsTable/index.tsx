@@ -33,7 +33,7 @@ const StandingsTable = ({ standings }: Props) => {
               <tbody>
                 {getActiveStandings(keyName, standings)
                   .map((standing) => (
-                    <tr className="border-b dark:border-neutral-500">
+                    <tr key={standing.team.id} className="border-b dark:border-neutral-500">
                       <td className="whitespace-nowrap px-6 py-4 font-medium">
                         {standing.conference.rank}
                       </td>
