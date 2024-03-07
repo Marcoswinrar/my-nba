@@ -31,9 +31,6 @@ const GameTeam = ({ team, score }: Props) => {
       <span>
         {team.nickname}
       </span>
-      <span className="text-sm text-stone-400">
-        {score.win} - {score.loss}
-      </span>
     </div>
   )
 }

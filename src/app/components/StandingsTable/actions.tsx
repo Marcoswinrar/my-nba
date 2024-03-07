@@ -6,3 +6,4 @@ export const getActiveStandings = (
   standings: Conferences
 ) =>
   formatTeamsByRanking(standings[conference]);
+

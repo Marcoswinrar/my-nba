@@ -1,7 +1,9 @@
 import Header from "@/app/components/Header";
 
-const Game = () => (
-  <Header title="Game page" />
-)
+const Game = async () => {
+  return (
+    <Header title="Game page" />
+  )
+}
 
 export default Game;

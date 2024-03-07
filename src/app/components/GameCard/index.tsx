@@ -2,6 +2,7 @@ import { Game } from "@/app/domain/interfaces/game";
 import GameTeam from "../GameTeam";
 import GameStartTime from "../GameStartTime";
 import Link from "next/link";
+import GameInLive from "../GameInLive";
 
 const gameCardStyle = `
   flex
@@ -32,7 +33,20 @@ const GameCard = ({ game }: Props) => {
           team={game?.teams.home}
           score={game?.scores.home}
         />
-        <GameStartTime date={game?.date.start} />
+        {game?.status.long === 'In Play' &&
+          <GameInLive game={game} />
+        }
+        {game?.status.long === 'Scheduled' &&
+          <GameStartTime date={game?.date.start} />
+        }
+        {game?.status.long === 'Finished' &&
+          <div className="flex flex-col w-full items-center">
+            <span>Final</span>
+            <div className="flex">
+              {game.scores.home.points} - {game.scores.visitors.points}
+            </div>
+          </div>
+        }
         <GameTeam
           team={game?.teams.visitors}
           score={game?.scores.visitors

@@ -1,15 +1,18 @@
-import { Api } from "@/app/domain/interfaces/api";
-import { mock } from "./mock-data";
+"use client";
+import useSWR from "swr";
 import GameList from "./components/GameList";
+import Header from "./components/Header";
+import { today } from "./domain/utils/getTodayDateWithoutUTC";
 import { getGamesByDate } from "./data/repository/game";
 
-
-const Home = async () => {
-  const { results, response, errors }:
-    Api = mock; 
+const Home = () => {
+  const { data, isLoading } = useSWR(today, getGamesByDate, { refreshInterval: 20000 });
 
   return (
-    <GameList games={response}/>
+    <>
+      <Header title="Games for today" />
+      <GameList games={data?.response} />
+    </>
   )
 }
 

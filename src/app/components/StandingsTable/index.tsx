@@ -1,8 +1,9 @@
+import Image from "next/image";
+import cn from "classnames";
 import { StandingsContextType, useStandingsContext } from "@/app/domain/contexts/Standings";
 import { Conferences } from "@/app/domain/interfaces/conferences";
+import { isPlayin, isPlayoff } from "@/app/domain/utils/teamQualificationInTournament";
 import { getActiveStandings } from "./actions";
-import Image from "next/image";
-
 interface Props {
   standings: Conferences;
 }
@@ -10,6 +11,11 @@ interface Props {
 const StandingsTable = ({ standings }: Props) => {
   const { conference } = useStandingsContext() as StandingsContextType;
   let keyName = conference as keyof Conferences;
+
+  const standingColors = {
+    playoff: 'bg-green-600',
+    playin: 'bg-sky-600',
+  };
 
   return (
     <div className="flex flex-col">
@@ -32,19 +38,24 @@ const StandingsTable = ({ standings }: Props) => {
               </thead>
               <tbody>
                 {getActiveStandings(keyName, standings)
-                  .map((standing) => (
+                  .map((standing, index) => (
                     <tr key={standing.team.id} className="border-b dark:border-neutral-500">
-                      <td className="whitespace-nowrap px-6 py-4 font-medium">
-                        {standing.conference.rank}
+                      <td className={`whitespace-nowrap px-6 py-4 font-medium text-center`}>
+                        <div className={cn("rounded-full", {
+                          [standingColors.playoff]: isPlayoff(index),
+                          [standingColors.playin]: isPlayin(index),
+                        })}>
+                          {standing.conference.rank}
+                        </div>
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 flex items-center gap-4">
                         <Image
-                          style={{maxHeight: '32px'}}
-                          alt={standing.team.name} 
-                          src={standing.team.logo} 
-                          width={32} 
-                          height={32} 
-                          />
+                          style={{ maxHeight: '32px' }}
+                          alt={standing.team.name}
+                          src={standing.team.logo}
+                          width={32}
+                          height={32}
+                        />
                         {standing.team.name}
                       </td>
                       <td className="whitespace-nowrap px-6 py-4">{standing.win.total}</td>
@@ -65,6 +76,17 @@ const StandingsTable = ({ standings }: Props) => {
               </tbody>
             </table>
           </div>
+        </div>
+      </div>
+      <div className="flex justify-center pt-4">
+        <div className="mr-6 flex items-center">
+          <div className={`mr-2 h-5 w-10 rounded-full ${standingColors.playoff}`}></div>
+          <span className="text-sm text-gray-400">Playoffs</span>
+        </div>
+        <div className="flex items-center">
+          <div
+            className={`mr-2 h-5 w-10 rounded-full ${standingColors.playin}`}></div>
+          <span className="text-sm text-gray-400">Play-In Tournament</span>
         </div>
       </div>
     </div>
