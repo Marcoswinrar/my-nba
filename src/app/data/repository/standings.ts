@@ -1,4 +1,4 @@
-import { client } from '../../core/axios'
+import { fetcher } from "@/app/core/axios";
 
 export const getStandingsByStandardAndCurrentSeason = (season: string) =>
-  client.get('standings', { params: { league: 'standard', season } }).then(({ data }) => data)
+  fetcher.get('standings', { params: { league: 'standard', season } }).then(({ data }) => data);

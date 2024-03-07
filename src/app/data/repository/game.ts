@@ -1,8 +1,8 @@
-import { client } from '../../core/axios'
+import { fetcher } from "@/app/core/axios";
 
 export const getGamesByDate = (date: string) =>
-  client.get('/games', { params: { date } }).then(({ data }) => data)
+  fetcher.get('/games', { params: { date } }).then(({ data }) => data);
 
 
 export const getGameById = (id: number) =>
-  client.get('/game', { params: { id } }).then(({data}) => data)
+  fetcher.get('/game', { params: { id } }).then(({data}) => data);
