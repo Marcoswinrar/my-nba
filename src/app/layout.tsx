@@ -7,7 +7,7 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 const mainStyle = `
-  max-lg:mx-[2rem] 
+  max-md:mx-[1rem] 
   max-lg:text-center 
   max-lg:mt-[1rem] 
   mx-[3rem]
