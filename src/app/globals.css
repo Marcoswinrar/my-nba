@@ -18,12 +18,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -33,5 +30,15 @@ body {
 
   .active {
     border-bottom: 1px solid #38BDF8;
+  }
+
+  .pulse {
+    animation: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
   }
 }
