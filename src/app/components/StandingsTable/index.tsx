@@ -1,9 +1,9 @@
-import Image from "next/image";
 import cn from "classnames";
 import { StandingsContextType, useStandingsContext } from "@/app/domain/contexts/Standings";
 import { Conferences } from "@/app/domain/interfaces/conferences";
 import { isPlayin, isPlayoff } from "@/app/domain/utils/teamQualificationInTournament";
 import { getActiveStandings } from "./actions";
+import TeamLogo from "../TeamLogo";
 interface Props {
   standings: Conferences;
 }
@@ -49,13 +49,7 @@ const StandingsTable = ({ standings }: Props) => {
                         </div>
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 flex items-center gap-4">
-                        <Image
-                          style={{ maxHeight: '32px' }}
-                          alt={standing.team.name}
-                          src={standing.team.logo}
-                          width={32}
-                          height={32}
-                        />
+                        <TeamLogo team={standing.team.code} size={40} />
                         {standing.team.name}
                       </td>
                       <td className="whitespace-nowrap px-6 py-4">{standing.win.total}</td>

@@ -5,12 +5,12 @@ import { Api } from "@/app/domain/interfaces/api";
 import { standings } from "@/app/mock-data";
 
 const Standings = async () => {
-  // const {response, results, errors} = await getStandingsByCurrentSeason("2023");
+  const {response, results, errors} = standings;
 
   return (
     <>
       <Header title="Standings" />
-      {/* <StandingsList standings={response}/> */}
+      <StandingsList standings={response}/>
     </>
   )
 }

@@ -1,6 +1,5 @@
-import Image from "next/image"
 import { Team } from "@/app/domain/interfaces/team"
-import { Score } from "@/app/domain/interfaces/score"
+import TeamLogo from "../TeamLogo";
 
 const gameTeamStyle = `
   flex 
@@ -9,26 +8,18 @@ const gameTeamStyle = `
   gap-1 
   items-center 
   text-center 
-  w-full h-full 
+  w-1/4
 `;
 
 interface Props {
-  team: Team
-  score: Score;
+  team: Team;
 }
 
-const GameTeam = ({ team, score }: Props) => {
+const GameTeam = ({ team }: Props) => {
   return (
     <div className={gameTeamStyle}>
-      <Image
-        style={{ minHeight: '40px', maxHeight: '48px'}}
-        src={team?.logo}
-        alt={team?.name}
-        width={48}
-        height={48}
-        decoding="async"
-      />
-      <span>
+      <TeamLogo team={team?.code} />
+      <span className="text-sm whitespace-nowrap w-[100px]">
         {team.nickname}
       </span>
     </div>

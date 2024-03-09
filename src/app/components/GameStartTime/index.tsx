@@ -1,12 +1,20 @@
+import { GameStatus } from "@/app/domain/interfaces/status";
+import { cardStatus } from "@/app/domain/interfaces/gameStatus";
+
 interface Props {
   date: string;
+  status: GameStatus;
 }
 
-const GameStartTime = ({ date }: Props) => (
-  <span className="text-xs w-full text-center">
-    {new Date(date)
-      .toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
-  </span>
-)
+const GameStartTime = ({ date, status }: Props) => {
+  if (status?.long !== cardStatus.scheduled) return null;
+
+  return (
+    <span className="text-xs w-full text-center">
+      {new Date(date)
+        .toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
+    </span>
+  )
+}
 
 export default GameStartTime;
