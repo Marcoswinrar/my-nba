@@ -10,7 +10,7 @@ const GameInPlay = ({ game }: Props) => {
   if (game?.status.long !== cardStatus.isLive) return null;
 
   return (
-    <section className="flex justify-center items-center gap-2 lg:gap-4 text-[1.4rem]">
+    <section className="flex justify-center items-center gap-2 text-[1.4rem]">
       <span className="px-1">{game.scores.home.points}</span>
       <GamePeriod
         clockTime={game.status.clock}

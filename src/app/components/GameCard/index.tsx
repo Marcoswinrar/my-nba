@@ -7,15 +7,14 @@ const gameCardStyle = `
   flex
   justify-between
   items-center 
-  px-[2rem]
+  sm:px-[2rem]
   py-8
   bg-glass
   border 
   border-zinc-500 
   rounded   
-  duration-300 
   hover:cursor-pointer 
-  hover:bg-slate-700 
+  hover:bg-slate-700
 `;
 
 interface Props {
