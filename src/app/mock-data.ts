@@ -17,10 +17,10 @@ export const mock = {
       },
       "stage": 2,
       "status": {
-        "clock": null,
-        "halftime": false,
-        "short": 3,
-        "long": "Finished"
+        "clock": "9:05",
+        "halftime": "true",
+        "short": "2",
+        "long": "In Play",
       },
       "periods": {
         "current": 4,
