@@ -1,5 +1,7 @@
 import { Team } from "./team";
-import { Score } from "./score";
+import { GameStatus } from "./status";
+import { Scores } from "./scores";
+import { GamePeriod } from "./period";
 export interface Game {
   id: number;
   league: string;
@@ -19,19 +21,6 @@ interface GameDate {
   duration: string;
 }
 
-interface GameStatus {
-  clock: any;
-  halftime: boolean;
-  short: number;
-  long: string;
-}
-
-interface GamePeriod {
-  current: number;
-  total: number;
-  endOfPeriod: boolean;
-}
-
 interface GameArena {
   name: string;
   city: string;
@@ -44,8 +33,4 @@ interface GameTeams {
   home: Team;
 }
 
-interface Scores {
-  visitors: Score;
-  home: Score;
-}
 
