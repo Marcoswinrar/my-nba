@@ -7,16 +7,13 @@ interface Props {
   score: Scores;
 }
 
-const GameFinished = ({ status, score }: Props) => {
+const GameFinished = ({ status }: Props) => {
 
   if(status.long !== cardStatus.finished) return null;
 
   return (
-    <div className="flex flex-col w-full items-center max-sm:text-sm">
-      <span>Final</span>
-      <div className="flex">
-        {score.home.points} - {score.visitors.points}
-      </div>
+    <div className="flex items-center justify-end text-sm">
+      <span>Ended</span>
     </div>
   )
 

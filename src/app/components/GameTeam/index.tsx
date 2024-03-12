@@ -1,27 +1,31 @@
-import { Team } from "@/app/domain/interfaces/team"
 import TeamLogo from "../TeamLogo";
+import { Team } from "@/app/domain/interfaces/team"
+import { Score } from "@/app/domain/interfaces/score";
 
 const gameTeamStyle = `
   flex 
-  flex-col 
-  justify-center
+  w-full
   gap-1 
   items-center 
   text-center 
-  w-1/4
+  text-sm 
 `;
 
 interface Props {
   team: Team;
+  score: Score
 }
 
-const GameTeam = ({ team }: Props) => {
+const GameTeam = ({ team, score }: Props) => {
   return (
     <div className={gameTeamStyle}>
-      <TeamLogo team={team?.code} />
-      <span className="text-sm whitespace-nowrap w-[100px]">
-        {team.nickname}
-      </span>
+      <div className="flex items-center grow gap-2">
+        <TeamLogo team={team?.code} />
+        <span className="whitespace-nowrap w-[100px] text-left">
+          {team.nickname}
+        </span>
+      </div>
+      <span>{score?.points}</span>
     </div>
   )
 }

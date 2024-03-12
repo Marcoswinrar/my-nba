@@ -5,7 +5,7 @@ export type Props = {
   size?: number;
 }
 
-const TeamLogo = ({ team, size = 60 }: Props) => {
+const TeamLogo = ({ team, size = 48 }: Props) => {
   const Icon = NBAIcons[team as keyof typeof NBAIcons]
 
   return (

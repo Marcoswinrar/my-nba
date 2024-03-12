@@ -5,10 +5,10 @@ import GameStatus from "../GameStatus";
 
 const gameCardStyle = `
   flex
-  justify-between
-  items-center 
-  sm:px-[2rem]
-  py-8
+  items-center
+  max-md:px-[1rem]
+  px-[2rem]
+  py-6
   bg-glass
   border 
   border-zinc-500 
@@ -28,9 +28,17 @@ const GameCard = ({ game }: Props) => {
         key={game?.id}
         className={gameCardStyle}
       >
-        <GameTeam team={game?.teams.home}/>
+        <div className="flex flex-col grow">
+          <GameTeam
+            team={game?.teams.home}
+            score={game?.scores.home}
+          />
+          <GameTeam
+            team={game?.teams.visitors}
+            score={game?.scores.visitors}
+          />
+        </div>
         <GameStatus game={game} />
-        <GameTeam team={game?.teams.visitors}/>
       </article>
     </Link>
   )

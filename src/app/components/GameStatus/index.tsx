@@ -9,11 +9,11 @@ interface Props {
 
 const GameStatus = ({ game }: Props) => {
   return (
-    <>
+    <section className="w-[5rem]">
       <GameFinished score={game?.scores} status={game?.status} />
       <GameInPlay game={game} />
       <GameStartTime date={game?.date.start} status={game?.status} />
-    </>
+    </section>
   )
 }
 
