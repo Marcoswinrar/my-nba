@@ -1,6 +1,10 @@
 import { Game } from "@/app/domain/interfaces/game";
 import Header from "../Header";
 import GameCard from "../GameCard";
+import { today } from "@/app/domain/utils/getTodayDateWithoutUTC";
+import { getGamesByDate } from "@/app/data/repository/game";
+import useSWR from "swr";
+import { Api } from "@/app/domain/interfaces/api";
 
 const gridLayout = `
   grid
@@ -11,19 +15,19 @@ const gridLayout = `
   gap-8
 `;
 
-interface Props {
-  games: Game[];
-}
+const GameList = () => {
+  const { data: games, isLoading } = useSWR<Api | null>(today, getGamesByDate, {refreshInterval: 30000});
 
-const GameList = ({ games }: Props) => {
+  if (isLoading) return <span>Loading...</span>
+  if (!games?.response) return null;
+  
   return (
     <>
       <Header title="Games for today" />
       <section className={gridLayout}>
-        {games?.length > 0 &&
-          games.map(game => (
-            <GameCard key={game?.id} game={game} />
-          ))}
+        {games.response.map(game => (
+          <GameCard key={game?.id} game={game} />
+        ))}
       </section >
     </>
   )

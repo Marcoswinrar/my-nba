@@ -1,19 +1,14 @@
 "use client";
 import useSWR from "swr";
 import GameList from "./components/GameList";
-import Header from "./components/Header";
 import { today } from "./domain/utils/getTodayDateWithoutUTC";
 import { getGamesByDate } from "./data/repository/game";
 import { mock } from "./mock-data";
+import { Game } from "./domain/interfaces/game";
 
-const Home = () => {
-  const { data, isLoading } = useSWR(today, getGamesByDate, { refreshInterval: 20000 });
-  // const { results, response} = mock
-
-  console.log(data);
-
+const Home = () => {  
   return (
-    <GameList games={data?.response} />
+    <GameList />
   )
 }
 
