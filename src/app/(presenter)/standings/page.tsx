@@ -1,7 +1,6 @@
 
-import Header from "@/app/components/Header";
-import StandingsList from "@/app/components/StandingsList";
-import { Api } from "@/app/domain/entity/api";
+import Header from "@/app/ui/components/Header";
+import StandingsList from "@/app/ui/components/StandingsList";
 import { standings } from "@/app/mock-data";
 
 const Standings = async () => {

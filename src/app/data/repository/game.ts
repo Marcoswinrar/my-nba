@@ -1,4 +1,4 @@
-import { fetcher } from "@/app/core/axios";
+import { fetcher } from "@/core/axios";
 
 export const getGamesByDate = (date: string) =>
   fetcher.get('/games', { params: { date } }).then(({ data }) => data);

@@ -1,4 +1,4 @@
-import { StandingsContextType, useStandingsContext } from "@/app/domain/contexts/Standings";
+import { StandingsContextType, useStandingsContext } from "@/app/ui/contexts/Standings";
 import { getActive } from "./actions";
 
 const buttonDefaultStyle = `

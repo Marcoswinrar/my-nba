@@ -1,9 +1,10 @@
 import cn from "classnames";
-import { StandingsContextType, useStandingsContext } from "@/app/domain/contexts/Standings";
+import { StandingsContextType, useStandingsContext } from "@/app/ui/contexts/Standings";
 import { Conferences } from "@/app/domain/entity/conferences";
 import { isPlayin, isPlayoff } from "@/app/domain/use-cases/teamQualificationInTournament";
 import { getActiveStandings } from "./actions";
 import TeamLogo from "../TeamLogo";
+
 interface Props {
   standings: Conferences;
 }
