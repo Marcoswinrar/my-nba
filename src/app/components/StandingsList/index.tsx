@@ -1,5 +1,5 @@
 "use client";
-import { Standings } from "@/app/domain/interfaces/standings";
+import { Standings } from "@/app/domain/entity/standings";
 import { StandingsProvider } from "@/app/domain/contexts/Standings";
 import StandingsTable from "../StandingsTable";
 import ConferencePicker from "../ConferencePicker";

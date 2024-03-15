@@ -1,4 +1,4 @@
-import { Game } from "@/app/domain/interfaces/game";
+import { Game } from "@/app/domain/entity/game";
 import GameStartTime from "../GameStartTime";
 import GameFinished from "./finished";
 import GameInPlay from "./inPlay";

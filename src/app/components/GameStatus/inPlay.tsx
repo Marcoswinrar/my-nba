@@ -1,5 +1,5 @@
-import { Game } from "@/app/domain/interfaces/game"
-import { cardStatus } from "@/app/domain/interfaces/gameStatus";
+import { Game } from "@/app/domain/entity/game"
+import { cardStatus } from "@/app/domain/entity/gameStatus";
 import GamePeriod from "./period";
 
 interface Props {

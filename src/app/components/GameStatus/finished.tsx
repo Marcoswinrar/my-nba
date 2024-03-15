@@ -1,6 +1,6 @@
-import { cardStatus } from "@/app/domain/interfaces/gameStatus";
-import { Scores } from "@/app/domain/interfaces/scores";
-import { GameStatus } from "@/app/domain/interfaces/status";
+import { cardStatus } from "@/app/domain/entity/gameStatus";
+import { Scores } from "@/app/domain/entity/scores";
+import { GameStatus } from "@/app/domain/entity/status";
 
 interface Props {
   status: GameStatus;

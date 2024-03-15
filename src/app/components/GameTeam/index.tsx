@@ -1,6 +1,6 @@
 import TeamLogo from "../TeamLogo";
-import { Team } from "@/app/domain/interfaces/team"
-import { Score } from "@/app/domain/interfaces/score";
+import { Team } from "@/app/domain/entity/team"
+import { Score } from "@/app/domain/entity/score";
 
 const gameTeamStyle = `
   flex 

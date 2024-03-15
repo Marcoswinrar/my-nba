@@ -1,5 +1,5 @@
-import { Conferences } from "../interfaces/conferences";
-import { Standings } from "../interfaces/standings";
+import { Conferences } from "../entity/conferences";
+import { Standings } from "../entity/standings";
 
 export const formatStandingsByConference = (standings: Standings[]) => {
   const conferences: Conferences = {

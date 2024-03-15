@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Game } from "@/app/domain/interfaces/game";
+import { Game } from "@/app/domain/entity/game";
 import GameTeam from "../GameTeam";
 import GameStatus from "../GameStatus";
 

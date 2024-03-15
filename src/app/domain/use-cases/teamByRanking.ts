@@ -1,4 +1,4 @@
-import { Standings } from "../interfaces/standings";
+import { Standings } from "../entity/standings";
 
 const compareFn = (teamARanking: number, teamBRanking: number) =>
   teamARanking - teamBRanking;

@@ -1,4 +1,4 @@
-import { GamePeriod } from "@/app/domain/interfaces/period";
+import { GamePeriod } from "@/app/domain/entity/period";
 
 interface Props {
   period: GamePeriod;

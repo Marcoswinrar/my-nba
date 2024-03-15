@@ -1,10 +1,10 @@
-import { Game } from "@/app/domain/interfaces/game";
+import { Game } from "@/app/domain/entity/game";
 import Header from "../Header";
 import GameCard from "../GameCard";
-import { today } from "@/app/domain/utils/getTodayDateWithoutUTC";
+import { today } from "@/app/domain/use-cases/getTodayDateWithoutUTC";
 import { getGamesByDate } from "@/app/data/repository/game";
 import useSWR from "swr";
-import { Api } from "@/app/domain/interfaces/api";
+import { Api } from "@/app/domain/entity/api";
 
 const gridLayout = `
   grid

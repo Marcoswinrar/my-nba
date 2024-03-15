@@ -1,5 +1,5 @@
-import { GameStatus } from "@/app/domain/interfaces/status";
-import { cardStatus } from "@/app/domain/interfaces/gameStatus";
+import { GameStatus } from "@/app/domain/entity/status";
+import { cardStatus } from "@/app/domain/entity/gameStatus";
 
 interface Props {
   date: string;

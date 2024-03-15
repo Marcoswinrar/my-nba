@@ -1,5 +1,5 @@
-import { Conferences } from "@/app/domain/interfaces/conferences";
-import { formatTeamsByRanking } from "@/app/domain/utils/teamByRanking";
+import { Conferences } from "@/app/domain/entity/conferences";
+import { formatTeamsByRanking } from "@/app/domain/use-cases/teamByRanking";
 
 export const getActiveStandings = (
   conference: keyof Conferences,
